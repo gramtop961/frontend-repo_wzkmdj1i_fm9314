@@ -2,45 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-geist: 'Geist', system-ui, sans-serif;
-    --font-geist-mono: 'Geist Mono', monospace;
-    --font-mona: 'Mona Sans', system-ui, sans-serif;
-    --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
-    --font-manrope: 'Manrope', system-ui, sans-serif;
-  }
+/* Reset */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html,body{height:100%}
+body{line-height:1.5;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;background:#050505;color:#fff}
+img,picture,video,canvas,svg{display:block;max-width:100%}
+input,button,textarea,select{font:inherit;color:inherit;background:transparent;border:none;outline:none}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
 
-  html {
-    font-family: var(--font-sans);
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
+/* Scrollbar */
+*{scrollbar-width:thin;scrollbar-color:#D4AF37 #050505}
+*::-webkit-scrollbar{width:8px;height:8px}
+*::-webkit-scrollbar-track{background:#050505}
+*::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#C5941D,#D4AF37,#F4D03F);border-radius:999px}
+*::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#D4AF37,#F4D03F,#D4AF37)}
 
-  body {
-    @apply antialiased;
-  }
-}
+/* Utilities */
+.text-gradient-gold{background-image:linear-gradient(90deg,#C5941D 0%,#D4AF37 35%,#F4D03F 65%,#D4AF37 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* Custom utility classes for shadcn/ui patterns */
-@layer utilities {
-  .animate-in {
-    animation-name: animateIn;
-    animation-duration: 350ms;
-    --tw-enter-opacity: initial;
-    --tw-enter-scale: initial;
-    --tw-enter-rotate: initial;
-    --tw-enter-translate-x: initial;
-    --tw-enter-translate-y: initial;
-  }
-
-  .animate-out {
-    animation-name: animateOut;
-    animation-duration: 350ms;
-    --tw-exit-opacity: initial;
-    --tw-exit-scale: initial;
-    --tw-exit-rotate: initial;
-    --tw-exit-translate-x: initial;
-    --tw-exit-translate-y: initial;
-  }
-}
+html{scroll-behavior:smooth}
